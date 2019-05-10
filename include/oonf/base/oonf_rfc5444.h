@@ -360,6 +360,27 @@ oonf_rfc5444_is_target_active(struct oonf_rfc5444_target *target) {
 }
 
 /**
+ * @param pointer to rfc5444 interface
+ * @returns true if interface is in routing mode, false otherwise
+ */
+static INLINE bool
+oonf_rfc5444_is_interface_routing(struct oonf_rfc5444_interface *interface) {
+  return !interface->_socket.config.dont_route;
+}
+
+/**
+ * Sets the routing mode of a rfc5444 interface
+ * @param pointer to rfc5444 interface
+ * @param route true to acticate routing mode, false to deactivate it
+ */
+static INLINE void
+oonf_rfc5444_set_interface_routing(struct oonf_rfc5444_interface *interface, bool route) {
+  if (oonf_rfc5444_is_interface_routing(interface) != route) {
+    interface->_socket.config.dont_route = !route;
+    oonf_rfc5444_reconfigure_interface(interface, NULL);
+  }
+}
+/**
  * Request a protocol wide packet sequence number
  * @param protocol pointer to rfc5444 protocol instance
  */
