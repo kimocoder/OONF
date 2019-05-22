@@ -43,10 +43,11 @@
  * @file
  */
 
-#ifndef DLEP_RADIO_H_
-#define DLEP_RADIO_H_
+#ifndef DLEP_TELNET_H_
+#define DLEP_TELNET_H_
 
-/*! subsystem identifier */
-#define OONF_DLEP_RADIO_SUBSYSTEM "dlep_radio"
+int dlep_telnet_init(void);
+void dlep_telnet_cleanup(void);
 
-#endif /* DLEP_RADIO_H_ */
+#endif /* DLEP_TELNET_H_ */
+
