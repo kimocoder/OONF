@@ -268,10 +268,10 @@ enum dlep_tlvs
   DLEP_QUEUE_RESTART_TLV = 25,
 
   /*! link ID TLV */
-  DLEP_LID_TLV = 26,
+  DLEP_LID_LENGTH_TLV = 26,
 
   /*! link ID TLV */
-  DLEP_LID_LENGTH_TLV = 27,
+  DLEP_LID_TLV = 27,
 
   /* l1 statistics */
 
